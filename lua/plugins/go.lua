@@ -1,12 +1,13 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "go", "gomod", "gowork", "gosum" } },
+    opts = { ensure_installed = { "go", "gomod", "gowork", "gosum", "thrift" } },
   },
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        thriftls = {},
         gopls = {
           keys = {
             -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
@@ -76,4 +77,27 @@ return {
     "williamboman/mason.nvim",
     opts = { ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "delve" } },
   },
+  {
+    "leoluz/nvim-dap-go",
+    opts = {},
+  },
+  {
+    "fredrikaverpil/neotest-golang",
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "fredrikaverpil/neotest-golang",
+    },
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          -- Here we can set options for neotest-golang, e.g.
+          -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+          dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+        },
+      },
+    },
+  }
 }
