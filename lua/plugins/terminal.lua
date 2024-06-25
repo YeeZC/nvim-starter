@@ -1,4 +1,6 @@
 return {
+"kdheepak/lazygit.nvim",
+{
   "akinsho/toggleterm.nvim",
   version = "*",
   event = "VeryLazy",
@@ -7,4 +9,4 @@ return {
       direction = "float",
     })
   end,
-}
+}}
