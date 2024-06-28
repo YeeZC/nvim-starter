@@ -13,3 +13,4 @@ vim.wo.colorcolumn = "100"
 -- 边输入边搜索
 vim.o.incsearch = true
 vim.opt.relativenumber = false
+

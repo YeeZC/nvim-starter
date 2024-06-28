@@ -98,12 +98,12 @@ return {
         git_status = {
           symbols = {
             unstaged = "✗",
-						staged = "✓",
-						unmerged = "⌥",
-						renamed = "➜",
-						untracked = "★",
-						deleted = "⊖",
-						ignored = "◌",
+            staged = "✓",
+            unmerged = "⌥",
+            renamed = "➜",
+            untracked = "★",
+            deleted = "⊖",
+            ignored = "◌",
           },
         },
       },
@@ -129,5 +129,5 @@ return {
         end,
       })
     end,
-  }
+  },
 }
