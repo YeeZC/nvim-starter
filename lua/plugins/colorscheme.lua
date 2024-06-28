@@ -1,13 +1,13 @@
 local on_change = function(args)
-		vim.cmd("colorscheme " .. args.theme)
+  vim.cmd("colorscheme " .. args.theme)
 
-		vim.api.nvim_set_option("background", args.background)
-		require("lualine").setup({
-			options = {
-				theme = args.theme,
-			},
-		})
-	end
+  vim.api.nvim_set_option("background", args.background)
+  require("lualine").setup({
+    options = {
+      theme = args.theme,
+    },
+  })
+end
 return {
   {
     "rebelot/kanagawa.nvim",
@@ -23,24 +23,24 @@ return {
     end,
   },
   {
-		"f-person/auto-dark-mode.nvim",
-		lazy = false,
-		config = {
-			update_interval = 1000,
-			set_dark_mode = function()
+    "f-person/auto-dark-mode.nvim",
+    lazy = false,
+    opts = {
+      update_interval = 1000,
+      set_dark_mode = function()
         on_change({
-					theme = "kanagawa",
-					background = "dark",
-				})
-			end,
-			set_light_mode = function()
-				on_change({
-					theme = "kanagawa",
-					background = "light",
-				})
-			end,
-		},
-	},
+          theme = "kanagawa",
+          background = "dark",
+        })
+      end,
+      set_light_mode = function()
+        on_change({
+          theme = "kanagawa",
+          background = "light",
+        })
+      end,
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
