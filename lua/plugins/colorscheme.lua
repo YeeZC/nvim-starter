@@ -23,25 +23,6 @@ return {
     end,
   },
   {
-    "f-person/auto-dark-mode.nvim",
-    lazy = false,
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        on_change({
-          theme = "kanagawa",
-          background = "dark",
-        })
-      end,
-      set_light_mode = function()
-        on_change({
-          theme = "kanagawa",
-          background = "light",
-        })
-      end,
-    },
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "kanagawa",
