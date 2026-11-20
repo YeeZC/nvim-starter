@@ -3,7 +3,7 @@ return {
   main = "codex",
   cmd = { "Codex", "CodexOpen", "CodexFocus", "CodexClose", "CodexSend", "CodexAdd", "CodexTreeAdd" },
   opts = {
-    terminal = { diff_review = true },
+    default_args = { "--yolo" },
   },
   keys = {
     { "<leader>ac", "<cmd>Codex<cr>", desc = "Toggle Codex" },
