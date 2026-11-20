@@ -74,6 +74,15 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl", "delve" } },
+    opts = function(_, opts)
+      -- LazyVim's Go extra also adds tools; install each package only once.
+      opts.ensure_installed = LazyVim.dedup(vim.list_extend(opts.ensure_installed or {}, {
+        "goimports",
+        "gofumpt",
+        "gomodifytags",
+        "impl",
+        "delve",
+      }))
+    end,
   },
 }
